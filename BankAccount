@@ -1,0 +1,23 @@
+class Account():
+    
+    def __init__(self,owner,balance):
+        self.owner = owner
+        self.balance = balance
+        
+    def acc_info(self):
+        print(f'Account owner: {self.owner} \nAccount balance: ${self.balance}')
+        
+    def deposit(self,depo):
+        self.balance = self.balance + depo
+        print("Deposit Accepted")
+        print(f'Current balance is: ${self.balance}')
+        
+    def withdraw(self,draw):
+        
+        while draw > self.balance:
+            draw = int(input(f"You can't draw amount that higher than your balance.\nYour balance is: ${self.balance}\nPlease enter new amount: "))
+        else:
+            draw <= self.balance
+            self.balance = self.balance - draw
+            print("Withdraw Accepted")
+            print(f'Current balance is: ${self.balance}')
